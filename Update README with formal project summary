@@ -1,0 +1,35 @@
+## Aviation Analytics – USC Viterbi Projects
+
+I am currently pursuing my studies at the University of Southern California's Viterbi School of Engineering. This repository contains academic projects developed through coursework in predictive modeling and strategic optimization. The work herein applies Python-based tools to analyze flight route efficiency, procedural accuracy, and pilot fatigue using simulated aeronautical datasets. These files represent a continued effort to engage with technical modeling in aerospace contexts and a growing commitment to meaningful contributions in aviation systems and geospatial intelligence.
+
+---
+
+### Project Components
+
+- `gis_modeling.py`  
+  Geospatial modeling script developed using simulated flight path data  
+- `route_optimization.py`  
+  Route efficiency calculator incorporating wind speed and distance variables  
+- `flight_routes.csv`  
+  Simulated dataset utilized for fatigue analysis and route modeling  
+- `lax_jfk_route_map.png`  
+  Static visual depicting the modeled LAX to JFK flight corridor  
+- `fatigue_chart.png`  
+  Sample chart illustrating fatigue index based on flight duration metrics
+
+---
+
+### Tools Used
+
+- Python  
+- Pandas and NumPy  
+- GeoPandas and Shapely  
+- Matplotlib  
+- Geopy
+
+---
+
+### Courses Referenced
+
+- ITP 115: Predictive Analytics for Aviation and Aerospace Operations  
+- ITP 116: Aeronautical Data Modeling and Strategic Optimization
