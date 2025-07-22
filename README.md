@@ -4,3 +4,6 @@ At the core of the project is a simulation of flight route mapping and fatigue s
 
 Each element—from the LAX–JFK flight path to the fatigue line chart—is designed to be portable, interpretable, and display-ready. The repository contains both code and output images housed in the visuals/ folder. My intent is for this work to serve not as a comprehensive analysis, but rather as a proof of concept: a structured, visual-first presentation of aviation metrics.
 I appreciate your time in reviewing this project and welcome feedback or critique that may guide its next iteration.
+![Fatigue Chart](visuals/fatigue_chart.png)  
+![Flight Path Map](visuals/lax_jfk_route_map.png)  
+![Route Table Preview](visuals/route_table_preview.png)
