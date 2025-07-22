@@ -1,0 +1,23 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 import matplotlib.pyplot as plt\
+\
+# Simulated flight durations and fatigue levels\
+durations = [90, 180, 240, 300, 360]  # in minutes\
+fatigue_levels = [2, 4, 6, 7, 9]      # scale from 1 (low) to 10 (high)\
+\
+# Plotting the fatigue chart\
+plt.figure(figsize=(8, 5))\
+plt.plot(durations, fatigue_levels, marker='o', color='darkred', linewidth=2)\
+plt.title("Fatigue Index by Flight Duration")\
+plt.xlabel("Flight Duration (minutes)")\
+plt.ylabel("Fatigue Level (1\'9610)")\
+plt.grid(True)\
+plt.savefig("fatigue_chart.png")\
+plt.show()\
+}

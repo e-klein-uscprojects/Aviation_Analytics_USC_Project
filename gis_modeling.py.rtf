@@ -1,0 +1,38 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 import pandas as pd\
+import geopandas as gpd\
+from shapely.geometry import Point\
+import matplotlib.pyplot as plt\
+\
+# Simulated flight data\
+data = \{\
+    'flight_id': ['AA101', 'AA101', 'AA101'],\
+    'lat': [33.9416, 36.7783, 40.6413],\
+    'lon': [-118.4085, -119.4179, -73.7781],\
+    'altitude': [35000, 36000, 34000],\
+    'speed': [480, 500, 470],\
+    'timestamp': ['2025-07-21 08:00', '2025-07-21 09:30', '2025-07-21 11:00']\
+\}\
+\
+df = pd.DataFrame(data)\
+geometry = [Point(xy) for xy in zip(df['lon'], df['lat'])]\
+gdf = gpd.GeoDataFrame(df, geometry=geometry)\
+gdf.crs = "EPSG:4326"\
+\
+# Plotting the flight path\
+fig, ax = plt.subplots(figsize=(10, 6))\
+gdf.plot(ax=ax, color='blue', markersize=50)\
+plt.title("Simulated Flight Path: LAX to JFK")\
+plt.xlabel("Longitude")\
+plt.ylabel("Latitude")\
+plt.grid(True)\
+plt.savefig("lax_jfk_route_map.png")\
+plt.show()\
+\
+}

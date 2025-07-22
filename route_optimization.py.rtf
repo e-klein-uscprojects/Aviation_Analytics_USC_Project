@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset77 ZapfDingbatsITC;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 from geopy.distance import geodesic\
+\
+# Define sample flight routes with wind speed data\
+routes = [\
+    \{\
+        "origin": (33.9416, -118.4085),  # LAX\
+        "destination": (40.6413, -73.7781),  # JFK\
+        "windspeed_knots": 30\
+    \},\
+    \{\
+        "origin": (33.9416, -118.4085),  # LAX\
+        "destination": (41.8781, -87.6298),  # Chicago O'Hare\
+        "windspeed_knots": 15\
+    \}\
+]\
+\
+def optimize_route(route):\
+    # Calculate base distance\
+    distance_nm = geodesic(route["origin"], route["destination"]).nautical\
+    # Adjust for wind penalty (simplified model)\
+    adjusted_distance = distance_nm * (1 + route["windspeed_knots"] / 100)\
+    # Estimate fuel usage (placeholder rate)\
+    fuel_estimate = adjusted_distance * 0.06  # liters per nautical mile\
+    return \{\
+        "distance_nm": round(adjusted_distance, 2),\
+        "fuel_liters": round(fuel_estimate, 2)\
+    \}\
+\
+# Run optimization for each route\
+for r in routes:\
+    result = optimize_route(r)\
+    print(f"Route: \{r['origin']\} 
+\f1 \uc0\u10140 
+\f0  \{r['destination']\}")\
+    print(f"Adjusted Distance: \{result['distance_nm']\} NM")\
+    print(f"Estimated Fuel Usage: \{result['fuel_liters']\} liters\\n")\
+}
